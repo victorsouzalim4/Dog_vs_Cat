@@ -22,7 +22,8 @@ def treat_data_set(path):
         data_dir,
         target_size=IMG_SIZE,
         batch_size=32,
-        class_mode='binary'  # ou 'categorical' se tiver mais de duas classes
+        class_mode='binary',  # ou 'categorical' se tiver mais de duas classes
+        shuffle=False
     )
 
     return train_generator
