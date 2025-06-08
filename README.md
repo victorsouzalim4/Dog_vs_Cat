@@ -1,6 +1,8 @@
-# Classificador de Gatos e Cachorros com CNN
+# Classificador de Gatos e Cachorros com CNN 🐱🐶
 
 Este projeto implementa uma rede neural convolucional (CNN) para classificar imagens de gatos e cachorros utilizando TensorFlow/Keras.
+
+Repositório GitHub: [victorsouzalim4/Dog_vs_Cat](https://github.com/victorsouzalim4/Dog_vs_Cat)
 
 ---
 
@@ -9,8 +11,8 @@ Este projeto implementa uma rede neural convolucional (CNN) para classificar ima
 ### 1. Clone o repositório e entre na pasta:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd nome-do-repositorio
+git clone https://github.com/victorsouzalim4/Dog_vs_Cat.git
+cd Dog_vs_Cat
 ```
 
 ### 2. Crie e ative um ambiente virtual:
@@ -37,12 +39,13 @@ pip install -r requirements.txt
 
 ## 📦 Estrutura de dados
 
-Os dados originais estão disponibilizados via Google Drive. Após baixar o arquivo `.zip`:
+As imagens do dataset original estão disponíveis via Kaggle:
 
-🔗 [Link para o dataset no Google Drive](https://drive.google.com/...)
+🔗 [Dataset no Kaggle - Dogs vs Cats](https://www.kaggle.com/c/dogs-vs-cats/data)
 
-1. Extraia o conteúdo (ex: `PetImages/`) dentro da pasta `archive/`
-2. A estrutura deve ficar assim:
+1. Baixe o arquivo `train.zip` da competição
+2. Extraia o conteúdo dentro da pasta `archive/PetImages/`
+3. A estrutura final deverá ficar assim:
 
 ```
 archive/
@@ -53,9 +56,21 @@ archive/
 
 ---
 
+## ✂️ Divisão dos dados
+
+Antes de treinar, execute a função `split_dataset()` presente em `Utils/split_data_set.py` para dividir o conjunto original em:
+
+- Treinamento (70%)
+- Validação (15%)
+- Teste (15%)
+
+Isso criará a pasta `archive/splitted_data/` automaticamente.
+
+---
+
 ## 🚀 Treinando o modelo
 
-O script principal treina o modelo com validação e salva o melhor resultado.
+Execute o script de treinamento:
 
 ```bash
 python train.py
@@ -63,52 +78,45 @@ python train.py
 
 Esse script:
 
-- Divide os dados em treino, validação e teste
-- Treina uma CNN com dropout e early stopping
+- Lê os dados de `archive/splitted_data/`
+- Treina uma CNN com camadas de dropout e early stopping
 - Salva o melhor modelo em `Model/melhor_modelo.keras`
 
 ---
 
 ## 🧪 Testando o modelo
 
-Para testar o desempenho em imagens novas ou no conjunto de teste:
+Para testar o modelo salvo:
 
 ```bash
 python evaluate.py
 ```
 
-Esse script carrega o modelo salvo e:
+Esse script:
 
-- Avalia o desempenho em teste
-- Gera relatório de classificação
-- Plota a matriz de confusão
+- Carrega o modelo salvo
+- Avalia o desempenho no conjunto de teste
+- Gera o `classification_report`
+- Plota e salva a matriz de confusão
 
 ---
 
 ## 🧠 Modelos pré-treinados
 
-Os arquivos `.keras` contendo os modelos treinados serão disponibilizados via Google Drive:
+Os modelos treinados (`.keras`) estarão disponíveis via Google Drive:
 
 🔗 [Link do modelo no Google Drive](https://drive.google.com/...)
-
----
-
-## 📥 Dataset original
-
-O conjunto de imagens **PetImages** está disponível via Google Drive (ver link acima). Após baixar:
-
-1. Extraia o conteúdo em `archive/`
-2. Mantenha a estrutura de pastas original (`Cat/`, `Dog/`)
 
 ---
 
 ## 📌 Observações
 
 - Evite subir os modelos `.keras` diretamente no GitHub. Use `.gitignore`.
-- Os modelos maiores que 100MB exigem [Git LFS](https://git-lfs.com/) caso precise versionar.
+- Modelos acima de 100MB exigem [Git LFS](https://git-lfs.com/) para versionamento.
+- O dataset original **não é incluso no repositório**, baixe pelo link da Kaggle acima.
 
 ---
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido por [Seu Nome].
+Projeto desenvolvido por [victorsouzalim4]
