@@ -41,9 +41,9 @@ pip install -r requirements.txt
 
 As imagens do dataset original estão disponíveis via Kaggle:
 
-🔗 [Dataset no Kaggle - Dogs vs Cats](https://www.kaggle.com/c/dogs-vs-cats/data)
+🔗 [Dataset no Kaggle - Dogs vs Cats](https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset)
 
-1. Baixe o arquivo `train.zip` da competição
+1. Baixe o arquivo zip do data set
 2. Extraia o conteúdo dentro da pasta `archive/PetImages/`
 3. A estrutura final deverá ficar assim:
 
@@ -105,7 +105,7 @@ Esse script:
 
 Os modelos treinados (`.keras`) estarão disponíveis via Google Drive:
 
-🔗 [Link do modelo no Google Drive](https://drive.google.com/...)
+🔗 [Link do modelo no Google Drive](https://drive.google.com/file/d/1-cbuJWmsAYYVPqwHyKYnhQZYTWgTkwCN/view?usp=sharing)
 
 ---
 
