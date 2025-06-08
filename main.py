@@ -37,7 +37,7 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
 
 plt.figure(figsize=(6, 6))
 disp.plot(cmap=plt.cm.Blues, values_format='d')
-plt.title("Matriz de Confusão - Conjunto de Teste")
+plt.title("Confusion Matrix - Test Set")
 plt.show()
 
 
