@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-def treat_data_set(path):
+def treat_data_set(path, shuffle_value):
 
     IMG_SIZE = (150, 150)  
     data_dir = path  
@@ -23,7 +23,7 @@ def treat_data_set(path):
         target_size=IMG_SIZE,
         batch_size=32,
         class_mode='binary',  # ou 'categorical' se tiver mais de duas classes
-        shuffle=False
+        shuffle= shuffle_value
     )
 
     return train_generator

@@ -13,7 +13,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 
 
 test_path = "archive/splitted_data/test"
-test_generator = treat_data_set(test_path)
+test_generator = treat_data_set(path=test_path, shuffle_value=False)
 
 model = load_model("Model/dog_vs_cat_model_final.keras")
 
