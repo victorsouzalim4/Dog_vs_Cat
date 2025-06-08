@@ -32,12 +32,13 @@ cm = confusion_matrix(y_true, y_pred)
 # Nomes das classes (ordenados pelo índice 0, 1)
 labels = list(test_generator.class_indices.keys())
 
-# Exibir matriz de confusão
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
 
-plt.figure(figsize=(6, 6))
-disp.plot(cmap=plt.cm.Blues, values_format='d')
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+fig, ax = plt.subplots(figsize=(6, 6))
+disp.plot(cmap=plt.cm.Blues, values_format='d', ax=ax)
+
 plt.title("Confusion Matrix - Test Set")
-plt.show()
+plt.savefig("Visualization/Confusion_Matrix.jpeg", dpi=300, bbox_inches='tight')
+plt.close()
 
 
