@@ -4,11 +4,8 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 def treat_data_set(path):
 
     IMG_SIZE = (150, 150)  
-
-
     data_dir = path  
 
-    
     train_datagen = ImageDataGenerator(
         rescale=1./255,                 # Normalização
         rotation_range=40,             # Rotação aleatória
