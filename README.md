@@ -72,12 +72,6 @@ Isso criará a pasta `archive/splitted_data/` automaticamente.
 
 Execute o script de treinamento:
 
-```bash
-python train.py
-```
-
-Esse script:
-
 - Lê os dados de `archive/splitted_data/`
 - Treina uma CNN com camadas de dropout e early stopping
 - Salva o melhor modelo em `Model/melhor_modelo.keras`
@@ -89,7 +83,7 @@ Esse script:
 Para testar o modelo salvo:
 
 ```bash
-python evaluate.py
+python main.py
 ```
 
 Esse script:
